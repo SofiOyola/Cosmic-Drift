@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cosmic Drift</title>
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+    <!-- Pantalla de precarga de recursos (Imágenes, Audio y MediaPipe Web) -->
+    <div id="loadingOverlay" role="status" aria-live="polite">
+        <div class="loading-card">
+            <h1 class="loading-title">ℂ𝕠𝕤𝕞𝕚𝕔 𝔻𝕣𝕚𝕗𝕥</h1>
+            <div class="loading-spinner"></div>
+            <p id="loadingStatus" class="loading-text">Cargando Cosmic Drift...</p>
+        </div>
+    </div>
+
+    <!-- Contenedor principal 16:9 (Resolución lógica 1280 × 720) -->
+    <main id="appWrapper">
+        <div id="gameContainer">
+            <!-- Canvas principal del videojuego (1280 × 720) -->
+            <canvas id="gameCanvas" width="1280" height="720"></canvas>
+
+            <!-- Elementos de captura y procesamiento de cámara/MediaPipe -->
+            <div class="vision-Offscreen" aria-hidden="true">
+                <video id="camera" playsinline muted></video>
+                <canvas id="handCanvas" width="340" height="191"></canvas>
+            </div>
+
+            <!-- Botón de inicio accesible superpuesto exactamente sobre el botón del menú -->
+            <button id="startGame" type="button" aria-label="Empezar a jugar">
+                Empezar a jugar
+            </button>
+
+            <!-- Botón opcional de pantalla completa -->
+            <button
+                id="fullscreenBtn"
+                type="button"
+                title="Pantalla completa (F)"
+                aria-label="Pantalla completa"
+            >
+                ⛶
+            </button>
+        </div>
+    </main>
+
+    <!-- Punto de entrada modular ES6 -->
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
